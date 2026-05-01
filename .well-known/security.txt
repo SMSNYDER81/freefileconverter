@@ -1,1 +1,4 @@
-
+Contact: https://github.com/SMSNYDER81/freefileconverter/issues
+Expires: 2028-01-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://freefileconverter.org/.well-known/security.txt
