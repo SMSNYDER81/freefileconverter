@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Markdown to HTML: A Complete Conversion Reference — FreeFileConverter</title>
+<meta name="description" content="Everything you need to know about converting Markdown to clean, semantic HTML — from headings and tables to code blocks and footnotes.">
+<link rel="canonical" href="https://freefileconverter.org/markdown-to-html.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+<meta property="og:title" content="Markdown to HTML: A Complete Conversion Reference">
+<meta property="og:description" content="Everything you need to know about converting Markdown to clean, semantic HTML.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freefileconverter.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Markdown to HTML: A Complete Conversion Reference","author":{"@type":"Organization","name":"FreeFileConverter"},"publisher":{"@type":"Organization","name":"FreeFileConverter","url":"https://freefileconverter.org"},"datePublished":"2026-05-01"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0e0f;--bg2:#141618;--bg3:#1c1f22;--line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.12);--text:#e8e4dc;--text2:#9a9590;--text3:#5a5650;--cyan:#3ecfcf;--cyan-dim:rgba(62,207,207,0.12);--amber:#e8c84a;--green:#5dc97a;--green-dim:rgba(93,201,122,0.12);--syne:'Syne',sans-serif;--mono:'IBM Plex Mono',monospace}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:var(--bg2);position:relative;z-index:1}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-name{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.topbar-nav{display:flex;gap:4px}
+.topbar-link{padding:5px 12px;font-size:11px;color:var(--text2);text-decoration:none;border-radius:4px;transition:all 0.15s}
+.topbar-link:hover{background:var(--bg3);color:var(--text)}
+.page{max-width:700px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
+.breadcrumb{font-size:11px;color:var(--text3);margin-bottom:24px}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--cyan)}
+.post-cat{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+h1{font-family:var(--syne);font-size:30px;font-weight:800;color:var(--text);letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px}
+.post-meta{font-size:11px;color:var(--text3);margin-bottom:32px;display:flex;gap:16px}
+.ad-slot{background:var(--bg3);border:1px dashed var(--line2);border-radius:8px;padding:10px;text-align:center;margin:28px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+h2{font-family:var(--syne);font-size:18px;font-weight:700;color:var(--text);margin:32px 0 10px;letter-spacing:-0.02em}
+h3{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text);margin:20px 0 6px}
+p{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:14px}
+strong{color:var(--text)}
+.ref-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:11px}
+.ref-table th{background:var(--bg3);color:var(--text);padding:8px 12px;text-align:left;border:1px solid var(--line2);font-family:var(--syne);font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:0.06em}
+.ref-table td{padding:8px 12px;border:1px solid var(--line);color:var(--text2);vertical-align:top;line-height:1.7}
+.ref-table tr:nth-child(even) td{background:var(--bg2)}
+code{font-family:var(--mono);font-size:11px;color:var(--cyan);background:var(--bg3);padding:1px 5px;border-radius:3px}
+.callout{background:var(--cyan-dim);border:1px solid rgba(62,207,207,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout strong{color:var(--cyan)}
+.cta-box{background:var(--bg3);border:1px solid var(--line2);border-radius:10px;padding:20px 22px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta-text{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.cta-sub{font-size:11px;color:var(--text2);margin-top:3px}
+.cta-btn{padding:9px 20px;background:var(--cyan);color:var(--bg);font-family:var(--syne);font-size:12px;font-weight:700;border-radius:6px;text-decoration:none;white-space:nowrap}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);text-decoration:none;margin-top:32px}
+.back-link:hover{color:var(--cyan)}
+.footer{padding:18px 32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2);position:relative;z-index:1}
+.footer-left{font-size:11px;color:var(--text3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text3);text-decoration:none}
+.footer-links a:hover{color:var(--text2)}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <svg width="22" height="22" viewBox="0 0 20 20"><rect x="2" y="2" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="none"/><rect x="9" y="6" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="#0d0e0f"/></svg>
+    <span class="topbar-name">FreeFileConverter</span>
+  </a>
+  <nav class="topbar-nav">
+    <a class="topbar-link" href="index.html">Converter</a>
+    <a class="topbar-link" href="blog.html">Blog</a>
+    <a class="topbar-link" href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page">
+  <div class="breadcrumb"><a href="blog.html">Blog</a> → Documents</div>
+  <div class="post-cat">Documents</div>
+  <h1>Markdown to HTML: A Complete Conversion Reference</h1>
+  <div class="post-meta"><span>May 2026</span><span>6 min read</span></div>
+
+  <p>Markdown was designed to be converted to HTML. John Gruber's original spec defined Markdown as a writing format for the web — a way to write HTML without writing HTML. Understanding exactly how each Markdown element maps to HTML output helps you write Markdown that converts cleanly and produces semantic, well-structured pages.</p>
+
+  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7814690967688754" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+  <h2>Core element reference</h2>
+  <table class="ref-table">
+    <tr><th>Markdown</th><th>HTML output</th><th>Notes</th></tr>
+    <tr><td><code># Heading 1</code></td><td><code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code></td><td>One # per heading level, up to ######</td></tr>
+    <tr><td><code>**bold**</code></td><td><code>&lt;strong&gt;bold&lt;/strong&gt;</code></td><td>Also works with __double underscore__</td></tr>
+    <tr><td><code>*italic*</code></td><td><code>&lt;em&gt;italic&lt;/em&gt;</code></td><td>Also works with _single underscore_</td></tr>
+    <tr><td><code>`code`</code></td><td><code>&lt;code&gt;code&lt;/code&gt;</code></td><td>Inline code — backtick delimited</td></tr>
+    <tr><td><code>[link](url)</code></td><td><code>&lt;a href="url"&gt;link&lt;/a&gt;</code></td><td>Title attribute: [link](url "title")</td></tr>
+    <tr><td><code>![alt](src)</code></td><td><code>&lt;img src="src" alt="alt"&gt;</code></td><td>Images use same syntax as links with !</td></tr>
+    <tr><td><code>- item</code></td><td><code>&lt;ul&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ul&gt;</code></td><td>Also * or + as bullet character</td></tr>
+    <tr><td><code>1. item</code></td><td><code>&lt;ol&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;</code></td><td>Numbers don't need to be sequential</td></tr>
+    <tr><td><code>&gt; quote</code></td><td><code>&lt;blockquote&gt;quote&lt;/blockquote&gt;</code></td><td>Nestable with multiple &gt; characters</td></tr>
+    <tr><td><code>---</code></td><td><code>&lt;hr&gt;</code></td><td>Three or more dashes, asterisks, or underscores</td></tr>
+    <tr><td>Blank line between paragraphs</td><td><code>&lt;p&gt;...&lt;/p&gt;</code></td><td>Single line breaks don't create new paragraphs</td></tr>
+  </table>
+
+  <h2>Code blocks</h2>
+  <p>Fenced code blocks use triple backticks and produce <code>&lt;pre&gt;&lt;code&gt;</code> output. Adding a language identifier after the opening backticks enables syntax highlighting in renderers that support it:</p>
+  <p>A language identifier like <code>```javascript</code> or <code>```python</code> becomes a <code>class="language-javascript"</code> attribute on the <code>&lt;code&gt;</code> element, which syntax highlighting libraries like Prism.js or highlight.js use to apply coloring.</p>
+
+  <h2>Tables (GitHub Flavored Markdown)</h2>
+  <p>Standard CommonMark doesn't include tables, but GitHub Flavored Markdown (GFM) does. Table syntax uses pipe characters to separate columns and dashes for the header separator row:</p>
+  <p>Tables produce standard <code>&lt;table&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code> elements. Column alignment is set using colons in the separator row: <code>:---</code> for left, <code>:---:</code> for center, <code>---:</code> for right.</p>
+
+  <h2>Things that don't convert cleanly</h2>
+  <p><strong>Raw HTML in Markdown.</strong> Most Markdown parsers pass raw HTML through unchanged. This is intentional — it lets you embed HTML where Markdown falls short. However, some parsers strip or escape it for security. Know your parser's behavior before relying on inline HTML.</p>
+  <p><strong>Nested lists.</strong> Indentation rules for nested lists vary between parsers. CommonMark requires exactly 4 spaces or 1 tab. GitHub uses 2 spaces. When in doubt, use 4 spaces and test the output.</p>
+  <p><strong>Line breaks.</strong> A single line break in Markdown does not produce a <code>&lt;br&gt;</code> in HTML. To force a line break, end a line with two spaces before the newline, or use a backslash at the end of the line (GFM extension).</p>
+
+  <div class="callout"><strong>Which Markdown flavor?</strong> Our converter targets CommonMark with the most common GFM extensions (tables, task lists, strikethrough). If your Markdown uses custom extensions specific to a particular platform, some elements may not convert as expected.</div>
+
+  <h2>Convert Markdown to HTML in your browser</h2>
+  <p>Drop your <code>.md</code> file into the Documents panel and select HTML as the output format. The conversion handles all standard CommonMark syntax and outputs clean, semantic HTML that you can embed directly in any web page.</p>
+
+  <div class="cta-box">
+    <div>
+      <div class="cta-text">Convert Markdown → HTML for free</div>
+      <div class="cta-sub">CommonMark + GFM extensions. Browser-based. No upload.</div>
+    </div>
+    <a class="cta-btn" href="index.html">Convert now →</a>
+  </div>
+
+  <a class="back-link" href="blog.html">← Back to blog</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">© 2026 FreeFileConverter.org</div>
+  <div class="footer-links">
+    <a href="index.html">Converter</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback</a>
+  </div>
+</footer>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+<script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+</body>
+</html>

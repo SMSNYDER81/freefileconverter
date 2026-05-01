@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Convert DXF Files to SVG Without Losing Precision — FreeFileConverter</title>
+<meta name="description" content="DXF to SVG conversion is trickier than it looks. Coordinate systems, line weights, and arc precision all matter. This guide walks through every gotcha.">
+<link rel="canonical" href="https://freefileconverter.org/dxf-to-svg.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+<meta property="og:title" content="How to Convert DXF Files to SVG Without Losing Precision">
+<meta property="og:description" content="Coordinate systems, line weights, and arc precision all matter. This guide walks through every gotcha.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freefileconverter.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Convert DXF Files to SVG Without Losing Precision","description":"DXF to SVG conversion guide covering coordinate systems, line weights, and arc precision.","author":{"@type":"Organization","name":"FreeFileConverter"},"publisher":{"@type":"Organization","name":"FreeFileConverter","url":"https://freefileconverter.org"},"datePublished":"2026-05-01"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0e0f;--bg2:#141618;--bg3:#1c1f22;--bg4:#252a2e;--line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.12);--text:#e8e4dc;--text2:#9a9590;--text3:#5a5650;--cyan:#3ecfcf;--cyan-dim:rgba(62,207,207,0.12);--amber:#e8c84a;--amber-dim:rgba(232,200,74,0.12);--green:#5dc97a;--syne:'Syne',sans-serif;--mono:'IBM Plex Mono',monospace;--serif:'Instrument Serif',serif}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:var(--bg2);position:relative;z-index:1}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-name{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.topbar-nav{display:flex;gap:4px}
+.topbar-link{padding:5px 12px;font-size:11px;color:var(--text2);text-decoration:none;border-radius:4px;transition:all 0.15s}
+.topbar-link:hover{background:var(--bg3);color:var(--text)}
+.page{max-width:700px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
+.breadcrumb{font-size:11px;color:var(--text3);margin-bottom:24px}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--cyan)}
+.post-cat{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c084fc;margin-bottom:10px}
+h1{font-family:var(--syne);font-size:30px;font-weight:800;color:var(--text);letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px}
+.post-meta{font-size:11px;color:var(--text3);margin-bottom:32px;display:flex;gap:16px}
+.ad-slot{background:var(--bg3);border:1px dashed var(--line2);border-radius:8px;padding:10px;text-align:center;margin:28px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+h2{font-family:var(--syne);font-size:18px;font-weight:700;color:var(--text);margin:32px 0 10px;letter-spacing:-0.02em}
+h3{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text);margin:20px 0 6px}
+p{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:14px}
+strong{color:var(--text)}
+ul,ol{padding-left:20px;margin-bottom:14px}
+li{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:4px}
+.callout{background:var(--amber-dim);border:1px solid rgba(232,200,74,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout strong{color:var(--amber)}
+.callout-cyan{background:var(--cyan-dim);border:1px solid rgba(62,207,207,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout-cyan strong{color:var(--cyan)}
+.step-list{list-style:none;padding:0;margin:16px 0}
+.step-list li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px;color:var(--text2);line-height:1.7}
+.step-list li:last-child{border-bottom:none}
+.step-num{font-family:var(--syne);font-size:12px;font-weight:700;color:var(--cyan);min-width:20px}
+.cta-box{background:var(--bg3);border:1px solid var(--line2);border-radius:10px;padding:20px 22px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta-text{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.cta-sub{font-size:11px;color:var(--text2);margin-top:3px}
+.cta-btn{padding:9px 20px;background:var(--cyan);color:var(--bg);font-family:var(--syne);font-size:12px;font-weight:700;border-radius:6px;text-decoration:none;white-space:nowrap}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);text-decoration:none;margin-top:32px}
+.back-link:hover{color:var(--cyan)}
+.footer{padding:18px 32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2);position:relative;z-index:1}
+.footer-left{font-size:11px;color:var(--text3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text3);text-decoration:none}
+.footer-links a:hover{color:var(--text2)}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <svg width="22" height="22" viewBox="0 0 20 20"><rect x="2" y="2" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="none"/><rect x="9" y="6" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="#0d0e0f"/></svg>
+    <span class="topbar-name">FreeFileConverter</span>
+  </a>
+  <nav class="topbar-nav">
+    <a class="topbar-link" href="index.html">Converter</a>
+    <a class="topbar-link" href="blog.html">Blog</a>
+    <a class="topbar-link" href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page">
+  <div class="breadcrumb"><a href="blog.html">Blog</a> → CAD / Vector</div>
+  <div class="post-cat">CAD / Vector</div>
+  <h1>How to Convert DXF Files to SVG Without Losing Precision</h1>
+  <div class="post-meta"><span>May 2026</span><span>7 min read</span></div>
+
+  <p>DXF and SVG are both vector formats, but they come from completely different worlds. DXF is an AutoCAD interchange format built for engineering precision — millimeters, tolerances, layer stacks. SVG is a web format built for display — pixels, viewBoxes, browser rendering. Converting between them cleanly requires understanding where those worlds collide.</p>
+
+  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7814690967688754" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+  <h2>Why DXF to SVG is trickier than it looks</h2>
+  <p>Both formats store vector geometry — lines, curves, shapes — so you'd think conversion would be straightforward. The complications come from several fundamental differences:</p>
+  <p><strong>Coordinate systems are flipped.</strong> DXF uses a standard mathematical coordinate system where Y increases upward. SVG uses a screen coordinate system where Y increases downward. If you don't account for this, your DXF drawing will appear vertically mirrored in SVG.</p>
+  <p><strong>Units don't map directly.</strong> DXF files can be in millimeters, inches, or unitless. SVG works in pixels by default. Without knowing the source units and applying the right scale factor, your drawing will be the wrong size.</p>
+  <p><strong>DXF has entities SVG doesn't.</strong> SPLINE, HATCH, BLOCK, INSERT, DIMENSION — these DXF entity types have no direct SVG equivalent and require approximation or are simply dropped by converters that don't handle them.</p>
+
+  <h2>What converts cleanly</h2>
+  <p>The good news: the most common DXF entities for CAD and laser cutting work convert to SVG without any loss of precision:</p>
+  <ul>
+    <li><strong>LINE</strong> → SVG <code>&lt;line&gt;</code> — exact, no approximation needed</li>
+    <li><strong>CIRCLE</strong> → SVG <code>&lt;circle&gt;</code> — exact</li>
+    <li><strong>ARC</strong> → SVG <code>&lt;path&gt;</code> with arc commands — exact</li>
+    <li><strong>LWPOLYLINE</strong> → SVG <code>&lt;polyline&gt;</code> or <code>&lt;path&gt;</code> — exact for straight segments</li>
+    <li><strong>ELLIPSE</strong> → SVG <code>&lt;ellipse&gt;</code> — exact</li>
+  </ul>
+  <p>If your DXF file contains only these entity types — which is true for most laser cutting and CNC files — you'll get a pixel-perfect SVG with no quality loss.</p>
+
+  <h2>Before you convert: prepare your DXF</h2>
+  <ol class="step-list">
+    <li><span class="step-num">01</span><span>Export a 2D DXF from your CAD software. 3D DXF files contain Z-axis data that will be projected flat — this usually works, but 2D is cleaner.</span></li>
+    <li><span class="step-num">02</span><span>Flatten to a single layer if possible. Multiple layers can cause visibility issues depending on how the converter handles layer colors and states.</span></li>
+    <li><span class="step-num">03</span><span>Explode any blocks or groups. BLOCK and INSERT entities won't convert correctly in most browser-based converters — exploding them to basic geometry first ensures everything comes through.</span></li>
+    <li><span class="step-num">04</span><span>Remove dimensions, annotations, and hatching if you only need the geometry. These entity types are rarely supported and will either be dropped silently or cause errors.</span></li>
+    <li><span class="step-num">05</span><span>Save as DXF R12 or R2000 format. Newer DXF versions add complexity that lightweight converters don't always handle.</span></li>
+  </ol>
+
+  <div class="callout"><strong>Laser cutting tip:</strong> Most laser cutter software (LightBurn, xTool Creative Space, RDWorks) accepts both DXF and SVG. If you're converting specifically for laser cutting, check whether your software already imports DXF natively — you may not need to convert at all.</div>
+
+  <h2>After conversion: what to check</h2>
+  <p>Open your SVG in a browser or design tool and verify these things before using it:</p>
+  <ul>
+    <li><strong>Orientation</strong> — is the drawing right-side up? If it's mirrored vertically, the converter didn't flip the Y axis correctly.</li>
+    <li><strong>Scale</strong> — measure a known dimension. If a 100mm line doesn't measure correctly in your design tool, the units weren't converted.</li>
+    <li><strong>Completeness</strong> — compare entity counts. Any missing geometry means unsupported entity types were silently dropped.</li>
+    <li><strong>Closed paths</strong> — laser cutters need closed paths for cutting. Open paths will only score/engrave. Check that what should be closed is actually closed.</li>
+  </ul>
+
+  <div class="callout-cyan"><strong>Viewing tip:</strong> Open the SVG file directly in Chrome or Firefox before importing into your design software. The browser renders SVG natively and gives you an instant sanity check at no cost.</div>
+
+  <h2>Convert DXF to SVG in your browser</h2>
+  <p>Our CAD converter handles DXF files entirely in your browser — no upload, no account, no size limit. It correctly flips the Y coordinate system, scales the viewBox to fit your geometry, and outputs clean SVG with preserved arc precision. Drop your DXF file in the CAD / Vector panel and download the result.</p>
+
+  <div class="cta-box">
+    <div>
+      <div class="cta-text">Convert DXF → SVG for free</div>
+      <div class="cta-sub">Browser-based. No upload. Works with laser cutting files.</div>
+    </div>
+    <a class="cta-btn" href="index.html">Convert now →</a>
+  </div>
+
+  <a class="back-link" href="blog.html">← Back to blog</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">© 2026 FreeFileConverter.org</div>
+  <div class="footer-links">
+    <a href="index.html">Converter</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback</a>
+  </div>
+</footer>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+<script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+</body>
+</html>

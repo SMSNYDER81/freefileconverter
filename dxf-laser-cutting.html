@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preparing DXF Files for Laser Cutting: A Beginner's Guide — FreeFileConverter</title>
+<meta name="description" content="Most hobbyist laser cutters accept SVG or DXF. But not all DXF files are created equal. Layer structure, line weights, and units all affect your cut.">
+<link rel="canonical" href="https://freefileconverter.org/dxf-laser-cutting.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+<meta property="og:title" content="Preparing DXF Files for Laser Cutting: A Beginner's Guide">
+<meta property="og:description" content="Layer structure, line weights, and units all affect your cut. Here's what to check before you send a DXF to your laser cutter.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freefileconverter.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Preparing DXF Files for Laser Cutting: A Beginner's Guide","author":{"@type":"Organization","name":"FreeFileConverter"},"publisher":{"@type":"Organization","name":"FreeFileConverter","url":"https://freefileconverter.org"},"datePublished":"2026-05-01"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0e0f;--bg2:#141618;--bg3:#1c1f22;--line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.12);--text:#e8e4dc;--text2:#9a9590;--text3:#5a5650;--cyan:#3ecfcf;--cyan-dim:rgba(62,207,207,0.12);--amber:#e8c84a;--amber-dim:rgba(232,200,74,0.12);--green:#5dc97a;--green-dim:rgba(93,201,122,0.12);--syne:'Syne',sans-serif;--mono:'IBM Plex Mono',monospace}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:var(--bg2);position:relative;z-index:1}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-name{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.topbar-nav{display:flex;gap:4px}
+.topbar-link{padding:5px 12px;font-size:11px;color:var(--text2);text-decoration:none;border-radius:4px;transition:all 0.15s}
+.topbar-link:hover{background:var(--bg3);color:var(--text)}
+.page{max-width:700px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
+.breadcrumb{font-size:11px;color:var(--text3);margin-bottom:24px}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--cyan)}
+.post-cat{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c084fc;margin-bottom:10px}
+h1{font-family:var(--syne);font-size:30px;font-weight:800;color:var(--text);letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px}
+.post-meta{font-size:11px;color:var(--text3);margin-bottom:32px;display:flex;gap:16px}
+.ad-slot{background:var(--bg3);border:1px dashed var(--line2);border-radius:8px;padding:10px;text-align:center;margin:28px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+h2{font-family:var(--syne);font-size:18px;font-weight:700;color:var(--text);margin:32px 0 10px;letter-spacing:-0.02em}
+h3{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text);margin:20px 0 6px}
+p{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:14px}
+strong{color:var(--text)}
+ul,ol{padding-left:20px;margin-bottom:14px}
+li{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:6px}
+.checklist{list-style:none;padding:0;margin:16px 0}
+.checklist li{display:flex;gap:10px;padding:9px 12px;background:var(--bg3);border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--text2);margin-bottom:6px;line-height:1.6}
+.check-icon{color:var(--green);flex-shrink:0;margin-top:1px}
+.callout{background:var(--cyan-dim);border:1px solid rgba(62,207,207,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout strong{color:var(--cyan)}
+.callout-amber{background:var(--amber-dim);border:1px solid rgba(232,200,74,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout-amber strong{color:var(--amber)}
+.cta-box{background:var(--bg3);border:1px solid var(--line2);border-radius:10px;padding:20px 22px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta-text{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.cta-sub{font-size:11px;color:var(--text2);margin-top:3px}
+.cta-btn{padding:9px 20px;background:var(--cyan);color:var(--bg);font-family:var(--syne);font-size:12px;font-weight:700;border-radius:6px;text-decoration:none;white-space:nowrap}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);text-decoration:none;margin-top:32px}
+.back-link:hover{color:var(--cyan)}
+.footer{padding:18px 32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2);position:relative;z-index:1}
+.footer-left{font-size:11px;color:var(--text3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text3);text-decoration:none}
+.footer-links a:hover{color:var(--text2)}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <svg width="22" height="22" viewBox="0 0 20 20"><rect x="2" y="2" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="none"/><rect x="9" y="6" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="#0d0e0f"/></svg>
+    <span class="topbar-name">FreeFileConverter</span>
+  </a>
+  <nav class="topbar-nav">
+    <a class="topbar-link" href="index.html">Converter</a>
+    <a class="topbar-link" href="blog.html">Blog</a>
+    <a class="topbar-link" href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page">
+  <div class="breadcrumb"><a href="blog.html">Blog</a> → CAD / Vector</div>
+  <div class="post-cat">CAD / Vector</div>
+  <h1>Preparing DXF Files for Laser Cutting: A Beginner's Guide</h1>
+  <div class="post-meta"><span>May 2026</span><span>8 min read</span></div>
+
+  <p>Your design looks perfect on screen. You export to DXF, load it into LightBurn or xTool Creative Space, and suddenly paths are missing, dimensions are wrong, or the software throws an import error. DXF files for laser cutting have specific requirements that CAD software doesn't enforce by default.</p>
+
+  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7814690967688754" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+  <h2>DXF vs SVG for laser cutting</h2>
+  <p>Both formats work with most modern laser cutter software. The practical difference is that SVG is simpler and has fewer compatibility headaches, while DXF is better for precision engineering where exact dimensions and unit accuracy are critical. For most hobby laser projects, SVG is easier. For precise mechanical parts, stick with DXF.</p>
+
+  <h2>The pre-flight checklist</h2>
+  <ul class="checklist">
+    <li><span class="check-icon">✓</span><span><strong>Use 2D geometry only.</strong> Laser cutters are 2D machines. 3D DXF files with Z-axis data cause import errors or unexpected projections. Export or save as 2D before using.</span></li>
+    <li><span class="check-icon">✓</span><span><strong>Set units to millimeters.</strong> Most laser software defaults to mm. If your DXF is in inches, verify the software applies the correct unit conversion — some don't.</span></li>
+    <li><span class="check-icon">✓</span><span><strong>Use closed paths for cuts.</strong> Laser cutter software treats open paths as score/engrave lines. For a clean cut-through, every shape boundary must be a closed path with no gaps.</span></li>
+    <li><span class="check-icon">✓</span><span><strong>Explode blocks and groups.</strong> BLOCK and INSERT entities don't always import correctly. Explode all groups to basic geometry before exporting.</span></li>
+    <li><span class="check-icon">✓</span><span><strong>Remove text, dimensions, and hatching.</strong> These entity types are rarely useful for laser cutting and can confuse the import. Delete them before exporting.</span></li>
+    <li><span class="check-icon">✓</span><span><strong>Use layers to separate operations.</strong> Most laser software maps DXF layers to cut/engrave operations. Put your cut lines on one layer, engrave paths on another, and score lines on a third.</span></li>
+    <li><span class="check-icon">✓</span><span><strong>Save as DXF R12 or R2000.</strong> Newer DXF versions add features that lightweight importers don't support. Older format versions have better compatibility.</span></li>
+  </ul>
+
+  <h2>The gap problem</h2>
+  <p>The most common DXF laser cutting issue is tiny gaps in paths that should be closed. These happen when lines are drawn as separate segments that look connected visually but don't share exact endpoints. The laser software sees an open path and treats it as an engrave line instead of a cut.</p>
+  <p>To fix this in most CAD software, use a "join" or "close path" operation with a small tolerance (0.01–0.1mm). In Inkscape, this is Edit → Select Same → Fill Color, then Path → Combine. In Fusion 360, use Modify → Join.</p>
+
+  <div class="callout-amber"><strong>Laser safety note:</strong> Always do a test cut on scrap material before committing a full sheet. A single open path gap can ruin an expensive piece of acrylic or hardwood.</div>
+
+  <h2>Checking your file before cutting</h2>
+  <p>Import your DXF into LightBurn or your laser software and switch to the node editing view. This shows individual path nodes and makes gaps visible as unconnected endpoints. Any gap larger than your kerf width will cause a problem.</p>
+  <p>LightBurn has a built-in "close paths" tool under Edit → Close Selected Paths that automatically closes gaps up to a specified tolerance. Run this before sending any DXF to the laser.</p>
+
+  <div class="callout"><strong>Tip:</strong> If you need to convert your DXF to SVG before importing — some older laser software only accepts SVG — our CAD converter handles the conversion in your browser with correct coordinate system handling and preserved arc precision.</div>
+
+  <h2>Layer color conventions</h2>
+  <p>A common convention for laser cutting DXF files uses layer colors to indicate operations: red for cut, blue for score, black for engrave. This isn't a universal standard, but it's widely used in the maker community and recognized by most laser software. Check your software's documentation for its specific layer mapping rules.</p>
+
+  <div class="cta-box">
+    <div>
+      <div class="cta-text">Convert DXF → SVG for free</div>
+      <div class="cta-sub">Browser-based. Preserves arc precision. No upload required.</div>
+    </div>
+    <a class="cta-btn" href="index.html">Convert now →</a>
+  </div>
+
+  <a class="back-link" href="blog.html">← Back to blog</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">© 2026 FreeFileConverter.org</div>
+  <div class="footer-links">
+    <a href="index.html">Converter</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback</a>
+  </div>
+</footer>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+<script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+</body>
+</html>

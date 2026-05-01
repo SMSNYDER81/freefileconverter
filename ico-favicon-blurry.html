@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Your ICO Favicon Looks Blurry — and How to Fix It — FreeFileConverter</title>
+<meta name="description" content="Favicons require specific sizes at specific densities. A 32x32 PNG converted naively to ICO loses sharpness. Here's the right approach.">
+<link rel="canonical" href="https://freefileconverter.org/ico-favicon-blurry.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+<meta property="og:title" content="Why Your ICO Favicon Looks Blurry — and How to Fix It">
+<meta property="og:description" content="Favicons require specific sizes at specific densities. Here's why blurry favicons happen and the right fix.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://freefileconverter.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why Your ICO Favicon Looks Blurry — and How to Fix It","author":{"@type":"Organization","name":"FreeFileConverter"},"publisher":{"@type":"Organization","name":"FreeFileConverter","url":"https://freefileconverter.org"},"datePublished":"2026-05-01"}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0e0f;--bg2:#141618;--bg3:#1c1f22;--line:rgba(255,255,255,0.07);--line2:rgba(255,255,255,0.12);--text:#e8e4dc;--text2:#9a9590;--text3:#5a5650;--cyan:#3ecfcf;--cyan-dim:rgba(62,207,207,0.12);--amber:#e8c84a;--amber-dim:rgba(232,200,74,0.12);--green:#5dc97a;--syne:'Syne',sans-serif;--mono:'IBM Plex Mono',monospace}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:13px;line-height:1.6;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;border-bottom:1px solid var(--line);background:var(--bg2);position:relative;z-index:1}
+.topbar-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.topbar-name{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.topbar-nav{display:flex;gap:4px}
+.topbar-link{padding:5px 12px;font-size:11px;color:var(--text2);text-decoration:none;border-radius:4px;transition:all 0.15s}
+.topbar-link:hover{background:var(--bg3);color:var(--text)}
+.page{max-width:700px;margin:0 auto;padding:48px 24px 80px;position:relative;z-index:1}
+.breadcrumb{font-size:11px;color:var(--text3);margin-bottom:24px}
+.breadcrumb a{color:var(--text3);text-decoration:none}
+.breadcrumb a:hover{color:var(--cyan)}
+.post-cat{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px}
+h1{font-family:var(--syne);font-size:30px;font-weight:800;color:var(--text);letter-spacing:-0.03em;line-height:1.2;margin-bottom:12px}
+.post-meta{font-size:11px;color:var(--text3);margin-bottom:32px;display:flex;gap:16px}
+.ad-slot{background:var(--bg3);border:1px dashed var(--line2);border-radius:8px;padding:10px;text-align:center;margin:28px 0;min-height:90px;display:flex;align-items:center;justify-content:center}
+h2{font-family:var(--syne);font-size:18px;font-weight:700;color:var(--text);margin:32px 0 10px;letter-spacing:-0.02em}
+h3{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text);margin:20px 0 6px}
+p{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:14px}
+strong{color:var(--text)}
+ul,ol{padding-left:20px;margin-bottom:14px}
+li{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:4px}
+.callout{background:var(--cyan-dim);border:1px solid rgba(62,207,207,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout strong{color:var(--cyan)}
+.callout-amber{background:var(--amber-dim);border:1px solid rgba(232,200,74,0.25);border-radius:8px;padding:16px 18px;margin:20px 0;font-size:12px;color:var(--text2);line-height:1.8}
+.callout-amber strong{color:var(--amber)}
+.size-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:16px 0}
+.size-card{background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:12px;text-align:center}
+.size-val{font-family:var(--syne);font-size:16px;font-weight:800;color:var(--cyan);margin-bottom:3px}
+.size-label{font-size:10px;color:var(--text2)}
+.cta-box{background:var(--bg3);border:1px solid var(--line2);border-radius:10px;padding:20px 22px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.cta-text{font-family:var(--syne);font-size:14px;font-weight:700;color:var(--text)}
+.cta-sub{font-size:11px;color:var(--text2);margin-top:3px}
+.cta-btn{padding:9px 20px;background:var(--cyan);color:var(--bg);font-family:var(--syne);font-size:12px;font-weight:700;border-radius:6px;text-decoration:none;white-space:nowrap}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);text-decoration:none;margin-top:32px}
+.back-link:hover{color:var(--cyan)}
+.footer{padding:18px 32px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;background:var(--bg2);position:relative;z-index:1}
+.footer-left{font-size:11px;color:var(--text3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text3);text-decoration:none}
+.footer-links a:hover{color:var(--text2)}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <svg width="22" height="22" viewBox="0 0 20 20"><rect x="2" y="2" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="none"/><rect x="9" y="6" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="#0d0e0f"/></svg>
+    <span class="topbar-name">FreeFileConverter</span>
+  </a>
+  <nav class="topbar-nav">
+    <a class="topbar-link" href="index.html">Converter</a>
+    <a class="topbar-link" href="blog.html">Blog</a>
+    <a class="topbar-link" href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page">
+  <div class="breadcrumb"><a href="blog.html">Blog</a> → Images</div>
+  <div class="post-cat">Images</div>
+  <h1>Why Your ICO Favicon Looks Blurry — and How to Fix It</h1>
+  <div class="post-meta"><span>May 2026</span><span>3 min read</span></div>
+
+  <p>You converted your logo to ICO, uploaded it, and now the browser tab favicon looks soft and pixelated — even though your original image was crisp. This is one of the most common favicon mistakes, and the fix is simple once you understand what ICO files actually are.</p>
+
+  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7814690967688754" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+  <h2>What an ICO file actually is</h2>
+  <p>An ICO file is a container — it holds multiple images at different resolutions inside a single file. The browser picks the most appropriate size based on where the favicon is being displayed. Browser tab, bookmark bar, pinned site, and Windows taskbar icons all display at different sizes.</p>
+  <p>When you convert a single large PNG to ICO, most converters just downscale it to one size (usually 16×16 or 32×32) and wrap it in an ICO container. That one-size approach is what causes blurriness — the image wasn't designed at that pixel density, it was scaled down by an algorithm.</p>
+
+  <h2>The sizes that matter</h2>
+  <div class="size-grid">
+    <div class="size-card"><div class="size-val">16×16</div><div class="size-label">Browser tab</div></div>
+    <div class="size-card"><div class="size-val">32×32</div><div class="size-label">Browser tab (HiDPI)</div></div>
+    <div class="size-card"><div class="size-val">48×48</div><div class="size-label">Windows taskbar</div></div>
+    <div class="size-card"><div class="size-val">180×180</div><div class="size-label">Apple touch icon</div></div>
+  </div>
+
+  <h2>The right approach</h2>
+  <p><strong>Design or export at the target size, then convert.</strong> The sharpest favicons are designed at exactly 16×16 and 32×32 pixels — or at minimum, exported from a vector source (SVG) at those exact sizes rather than scaled from a large raster image.</p>
+  <p>For most modern sites, the cleanest solution is to skip ICO entirely and use an inline SVG favicon. SVG scales perfectly to any size with zero blur:</p>
+  <p>If you need ICO for compatibility — particularly for Internet Explorer or Windows pinned sites — start with a clean 32×32 PNG that was either drawn at that size or exported from SVG at that exact resolution.</p>
+
+  <div class="callout-amber"><strong>Common mistake:</strong> Taking a 512×512 logo PNG and converting it directly to ICO. The algorithm downscaling from 512 to 16 pixels almost always produces a blurry result. Design small, or use SVG as your source.</div>
+
+  <h2>Modern favicon best practice</h2>
+  <ul>
+    <li>Use an inline base64 SVG as your primary favicon — scales perfectly, no file request needed</li>
+    <li>Keep a 32×32 PNG as a fallback for older browsers</li>
+    <li>Use a 180×180 PNG for Apple touch icon (<code>apple-touch-icon</code>)</li>
+    <li>Only generate ICO if you specifically need Windows taskbar support</li>
+  </ul>
+
+  <div class="callout"><strong>Quick test:</strong> Open your site in Chrome and zoom the browser tab area. If your favicon looks blurry at normal size, it's almost certainly a resolution issue, not a conversion artifact.</div>
+
+  <div class="cta-box">
+    <div>
+      <div class="cta-text">Convert PNG → ICO for free</div>
+      <div class="cta-sub">Browser-based converter. Start with a clean 32×32 source for best results.</div>
+    </div>
+    <a class="cta-btn" href="index.html">Convert now →</a>
+  </div>
+
+  <a class="back-link" href="blog.html">← Back to blog</a>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">© 2026 FreeFileConverter.org</div>
+  <div class="footer-links">
+    <a href="index.html">Converter</a>
+    <a href="blog.html">Blog</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback</a>
+  </div>
+</footer>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
+<script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+</body>
+</html>
