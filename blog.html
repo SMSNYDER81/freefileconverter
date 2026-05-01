@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Free File Converter Tips, Guides & Format Comparisons</title>
+<meta name="description" content="Articles about file formats, conversion tips, and how-to guides. Learn when to use PNG vs WebP, how to convert DXF to SVG, and more.">
+<link rel="canonical" href="https://freefileconverter.org/blog.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+<meta property="og:title" content="Blog — Free File Converter">
+<meta property="og:description" content="File format guides, conversion tips, and how-to articles.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://freefileconverter.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0d0e0f; --bg2: #141618; --bg3: #1c1f22; --bg4: #252a2e;
+  --line: rgba(255,255,255,0.07); --line2: rgba(255,255,255,0.12);
+  --text: #e8e4dc; --text2: #9a9590; --text3: #5a5650;
+  --cyan: #3ecfcf; --cyan-dim: rgba(62,207,207,0.12);
+  --amber: #e8c84a; --amber-dim: rgba(232,200,74,0.12);
+  --green: #5dc97a; --green-dim: rgba(93,201,122,0.12);
+  --syne: 'Syne', sans-serif; --mono: 'IBM Plex Mono', monospace; --serif: 'Instrument Serif', serif;
+  --radius: 8px;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--mono); font-size: 13px; line-height: 1.6; min-height: 100vh; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; border-bottom: 1px solid var(--line); background: var(--bg2); position: relative; z-index: 1; }
+.topbar-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.topbar-name { font-family: var(--syne); font-size: 14px; font-weight: 700; color: var(--text); }
+.topbar-nav { display: flex; gap: 4px; }
+.topbar-link { padding: 5px 12px; font-size: 11px; color: var(--text2); text-decoration: none; border-radius: 4px; transition: all 0.15s; }
+.topbar-link:hover, .topbar-link.active { background: var(--bg3); color: var(--text); }
+
+.page { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; position: relative; z-index: 1; }
+
+.page-header { margin-bottom: 36px; }
+.page-header h1 { font-family: var(--syne); font-size: 28px; font-weight: 800; color: var(--text); letter-spacing: -0.03em; margin-bottom: 8px; }
+.page-header p { font-size: 12px; color: var(--text2); }
+
+.ad-slot { background: var(--bg3); border: 1px dashed var(--line2); border-radius: var(--radius); padding: 10px; text-align: center; margin-bottom: 32px; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+
+.category-filter { display: flex; gap: 6px; margin-bottom: 28px; flex-wrap: wrap; }
+.cat-pill { padding: 5px 14px; font-size: 10px; font-family: var(--mono); background: var(--bg3); border: 1px solid var(--line); border-radius: 20px; color: var(--text2); cursor: pointer; transition: all 0.15s; text-transform: uppercase; letter-spacing: 0.06em; }
+.cat-pill:hover { border-color: var(--line2); color: var(--text); }
+.cat-pill.active { background: var(--cyan-dim); border-color: var(--cyan); color: var(--cyan); }
+
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+
+.blog-card { background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; padding: 20px; cursor: pointer; transition: all 0.15s; text-decoration: none; display: block; }
+.blog-card:hover { border-color: var(--line2); transform: translateY(-2px); }
+
+.blog-card-cat { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+.cat-images { color: var(--cyan); }
+.cat-data { color: var(--amber); }
+.cat-documents { color: var(--green); }
+.cat-cad { color: #c084fc; }
+.cat-tips { color: var(--text2); }
+
+.blog-card-title { font-family: var(--syne); font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.4; margin-bottom: 8px; letter-spacing: -0.02em; }
+.blog-card-excerpt { font-size: 11px; color: var(--text2); line-height: 1.7; margin-bottom: 12px; }
+.blog-card-meta { font-size: 10px; color: var(--text3); display: flex; gap: 10px; align-items: center; }
+.blog-card-meta span::before { content: '·'; margin-right: 10px; }
+.blog-card-meta span:first-child::before { display: none; }
+
+.coming-soon { text-align: center; padding: 48px 24px; background: var(--bg3); border: 1px dashed var(--line2); border-radius: 10px; margin-top: 8px; }
+.coming-soon-title { font-family: var(--syne); font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.coming-soon-sub { font-size: 11px; color: var(--text2); }
+
+.footer { padding: 18px 32px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--bg2); position: relative; z-index: 1; }
+.footer-left { font-size: 11px; color: var(--text3); }
+.footer-links { display: flex; gap: 16px; }
+.footer-links a { font-size: 11px; color: var(--text3); text-decoration: none; transition: color 0.15s; }
+.footer-links a:hover { color: var(--text2); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <svg width="22" height="22" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <rect x="2" y="2" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="none"/>
+      <rect x="9" y="6" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="#0d0e0f"/>
+    </svg>
+    <span class="topbar-name">FreeFileConverter</span>
+  </a>
+  <nav class="topbar-nav">
+    <a class="topbar-link" href="index.html">Converter</a>
+    <a class="topbar-link active" href="blog.html">Blog</a>
+    <a class="topbar-link" href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="page">
+  <div class="page-header">
+    <h1>The Blog</h1>
+    <p>File format guides, conversion tips, and how-to articles for designers, developers, and makers.</p>
+  </div>
+
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7814690967688754" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  </div>
+
+  <div class="category-filter">
+    <div class="cat-pill active" onclick="filterCat('all', this)">All</div>
+    <div class="cat-pill" onclick="filterCat('images', this)">Images</div>
+    <div class="cat-pill" onclick="filterCat('data', this)">Data</div>
+    <div class="cat-pill" onclick="filterCat('cad', this)">CAD / Vector</div>
+    <div class="cat-pill" onclick="filterCat('documents', this)">Documents</div>
+    <div class="cat-pill" onclick="filterCat('tips', this)">Tips</div>
+  </div>
+
+  <div class="blog-grid" id="blog-grid">
+
+    <a class="blog-card" href="#" data-cat="images">
+      <div class="blog-card-cat cat-images">Images</div>
+      <div class="blog-card-title">PNG vs WebP: which format should you actually use in 2026?</div>
+      <div class="blog-card-excerpt">WebP is smaller, but PNG has near-universal support. Here's a practical breakdown of when each format wins — and when it doesn't matter.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>5 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="cad">
+      <div class="blog-card-cat cat-cad">CAD / Vector</div>
+      <div class="blog-card-title">How to convert DXF files to SVG without losing precision</div>
+      <div class="blog-card-excerpt">DXF to SVG conversion is trickier than it looks. Coordinate systems, line weights, and arc precision all matter. This guide walks through every gotcha.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>7 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="data">
+      <div class="blog-card-cat cat-data">Data</div>
+      <div class="blog-card-title">CSV vs JSON: picking the right format for your data pipeline</div>
+      <div class="blog-card-excerpt">CSV is human-readable and spreadsheet-friendly. JSON handles nesting and types. We break down which format fits which workflow.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>4 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="images">
+      <div class="blog-card-cat cat-images">Images</div>
+      <div class="blog-card-title">Why your ICO favicon looks blurry — and how to fix it</div>
+      <div class="blog-card-excerpt">Favicons require specific sizes at specific densities. A 32×32 PNG converted naively to ICO loses sharpness. Here's the right approach.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>3 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="cad">
+      <div class="blog-card-cat cat-cad">CAD / Vector</div>
+      <div class="blog-card-title">Preparing DXF files for laser cutting: a beginner's guide</div>
+      <div class="blog-card-excerpt">Most hobbyist laser cutters accept SVG or DXF. But not all DXF files are created equal. Layer structure, line weights, and units all affect your cut.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>8 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="tips">
+      <div class="blog-card-cat cat-tips">Tips</div>
+      <div class="blog-card-title">5 reasons to always convert files locally in the browser</div>
+      <div class="blog-card-excerpt">Cloud converters are convenient, but they come with real privacy trade-offs. Here's why browser-based conversion is almost always the smarter choice.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>4 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="documents">
+      <div class="blog-card-cat cat-documents">Documents</div>
+      <div class="blog-card-title">Markdown to HTML: a complete conversion reference</div>
+      <div class="blog-card-excerpt">From headings and tables to fenced code blocks and footnotes — everything you need to know about converting Markdown to clean, semantic HTML.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>6 min read</span>
+      </div>
+    </a>
+
+    <a class="blog-card" href="#" data-cat="data">
+      <div class="blog-card-cat cat-data">Data</div>
+      <div class="blog-card-title">Cleaning messy CSV before you convert: a practical checklist</div>
+      <div class="blog-card-excerpt">Bad headers, inconsistent quoting, mixed encodings — CSV files always have something wrong. Run through this list before any conversion job.</div>
+      <div class="blog-card-meta">
+        <span>Coming soon</span>
+        <span>5 min read</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-left">© 2026 FreeFileConverter.org</div>
+  <div class="footer-links">
+    <a href="index.html">Converter</a>
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback</a>
+  </div>
+</footer>
+
+<script>
+function filterCat(cat, el) {
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+</body>
+</html>

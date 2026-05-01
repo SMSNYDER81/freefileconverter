@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free File Converter — Convert Images, Documents, Data & CAD Online</title>
+<meta name="description" content="Free unlimited file converter. Convert images (PNG, JPG, WebP), data files (CSV, JSON, TSV), documents (TXT, Markdown, HTML), and CAD/DXF to SVG — all in your browser. Nothing uploaded.">
+<meta name="keywords" content="free file converter, online file converter, convert PNG to JPG, CSV to JSON, DXF to SVG, image converter, no upload file converter, browser file converter">
+<link rel="canonical" href="https://freefileconverter.org/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Free File Converter — Convert Images, Documents, Data & CAD Online">
+<meta property="og:description" content="Free, unlimited, private. All conversions happen in your browser — nothing is uploaded to any server.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://freefileconverter.org/">
+<meta property="og:image" content="https://freefileconverter.org/og-image.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free File Converter",
+  "url": "https://freefileconverter.org",
+  "description": "Free unlimited browser-based file converter. Convert images, documents, data files, and CAD/DXF files with no uploads and no limits.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0d0e0f;
+  --bg2: #141618;
+  --bg3: #1c1f22;
+  --bg4: #252a2e;
+  --line: rgba(255,255,255,0.07);
+  --line2: rgba(255,255,255,0.12);
+  --text: #e8e4dc;
+  --text2: #9a9590;
+  --text3: #5a5650;
+  --cyan: #3ecfcf;
+  --cyan-dim: rgba(62,207,207,0.12);
+  --cyan-glow: rgba(62,207,207,0.35);
+  --amber: #e8c84a;
+  --amber-dim: rgba(232,200,74,0.12);
+  --green: #5dc97a;
+  --green-dim: rgba(93,201,122,0.12);
+  --red: #e05555;
+  --red-dim: rgba(224,85,85,0.12);
+  --syne: 'Syne', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --serif: 'Instrument Serif', serif;
+  --radius: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── LAYOUT ─── */
+.shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  grid-row: 1 / 4;
+  background: var(--bg2);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  padding: 20px 18px 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 6px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--cyan-dim);
+  border: 1px solid var(--cyan);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-icon svg { width: 16px; height: 16px; }
+
+.logo-name {
+  font-family: var(--syne);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.logo-tag {
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+}
+
+.sidebar-section {
+  padding: 14px 18px 6px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  font-size: 12px;
+  color: var(--text2);
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.sidebar-item:hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+}
+
+.sidebar-item.active {
+  background: var(--cyan-dim);
+  color: var(--cyan);
+  border-left-color: var(--cyan);
+}
+
+.sidebar-item-icon {
+  width: 16px;
+  text-align: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.sidebar-item-badge {
+  margin-left: auto;
+  font-size: 9px;
+  padding: 1px 5px;
+  background: var(--amber-dim);
+  color: var(--amber);
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.sidebar-spacer { flex: 1; }
+
+.api-promo {
+  margin: 12px 12px 16px;
+  padding: 12px;
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  border-radius: var(--radius);
+}
+
+.api-promo-title {
+  font-family: var(--syne);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--amber);
+  margin-bottom: 5px;
+}
+
+.api-promo-body {
+  font-size: 10px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.api-promo-btn {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid var(--line2);
+  border-radius: 5px;
+  color: var(--text2);
+  font-family: var(--mono);
+  font-size: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s;
+}
+
+.api-promo-btn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+/* ─── TOPBAR ─── */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+
+.topbar-title {
+  font-family: var(--syne);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.topbar-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.topbar-link {
+  padding: 5px 12px;
+  font-size: 11px;
+  color: var(--text2);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.topbar-link:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+/* ─── MAIN ─── */
+.main {
+  padding: 28px 24px;
+  min-width: 0;
+}
+
+/* ─── AD SLOT ─── */
+.ad-slot {
+  background: var(--bg3);
+  border: 1px dashed var(--line2);
+  border-radius: var(--radius);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 24px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── CATEGORY TABS ─── */
+.cat-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.cat-tab {
+  padding: 6px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.cat-tab:hover {
+  border-color: var(--line2);
+  color: var(--text);
+}
+
+.cat-tab.active {
+  background: var(--cyan-dim);
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+/* ─── CONVERTER PANELS ─── */
+.converter-panel { display: none; }
+.converter-panel.active { display: block; }
+
+.panel-intro {
+  margin-bottom: 18px;
+}
+
+.panel-intro h1 {
+  font-family: var(--syne);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.panel-intro p {
+  font-size: 11px;
+  color: var(--text2);
+}
+
+/* ─── DROP ZONE ─── */
+.drop-zone {
+  border: 1.5px dashed var(--line2);
+  border-radius: 12px;
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.drop-zone:hover, .drop-zone.drag-over {
+  border-color: var(--cyan);
+  background: var(--cyan-dim);
+}
+
+.drop-zone input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.drop-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-icon svg { width: 22px; height: 22px; stroke: var(--cyan); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.drop-title {
+  font-family: var(--syne);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.drop-sub {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.drop-privacy {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 10px;
+  color: var(--green);
+  background: var(--green-dim);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ─── FORMAT BAR ─── */
+.format-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.format-bar-label {
+  font-size: 10px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.format-chips {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.fmt-chip {
+  padding: 3px 10px;
+  font-size: 10px;
+  font-family: var(--mono);
+  background: var(--bg4);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.12s;
+  text-transform: uppercase;
+}
+
+.fmt-chip:hover { border-color: var(--line2); color: var(--text); }
+.fmt-chip.sel { background: var(--cyan-dim); border-color: var(--cyan); color: var(--cyan); }
+
+.format-arrow {
+  color: var(--text3);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.format-bar select {
+  background: var(--bg4);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text2);
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  cursor: pointer;
+}
+
+/* ─── FILE QUEUE ─── */
+.file-queue {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  min-height: 0;
+}
+
+.file-queue-empty {
+  text-align: center;
+  padding: 20px;
+  color: var(--text3);
+  font-size: 11px;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.15s;
+}
+
+.file-row:hover { border-color: var(--line2); }
+
+.file-type-badge {
+  font-size: 9px;
+  font-family: var(--syne);
+  font-weight: 700;
+  padding: 2px 6px;
+  background: var(--bg4);
+  border: 1px solid var(--line2);
+  border-radius: 3px;
+  color: var(--text2);
+  text-transform: uppercase;
+  flex-shrink: 0;
+  min-width: 36px;
+  text-align: center;
+}
+
+.file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.file-name {
+  font-size: 12px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-meta {
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: 1px;
+}
+
+.file-status-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.status-ready { background: var(--bg4); color: var(--text2); }
+.status-converting { background: var(--amber-dim); color: var(--amber); }
+.status-done { background: var(--green-dim); color: var(--green); }
+.status-error { background: var(--red-dim); color: var(--red); }
+
+.file-dl-btn {
+  padding: 4px 12px;
+  font-size: 10px;
+  font-family: var(--mono);
+  background: transparent;
+  border: 1px solid var(--line2);
+  border-radius: 4px;
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.file-dl-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.file-dl-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.file-remove-btn {
+  background: none;
+  border: none;
+  color: var(--text3);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.file-remove-btn:hover { color: var(--red); }
+
+/* ─── ACTION ROW ─── */
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.convert-btn {
+  padding: 10px 22px;
+  font-family: var(--syne);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--cyan);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: -0.01em;
+}
+
+.convert-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+.convert-btn:active { transform: translateY(0); }
+.convert-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+.dl-all-btn {
+  padding: 10px 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  background: transparent;
+  border: 1px solid var(--line2);
+  border-radius: var(--radius);
+  color: var(--text2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.dl-all-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.action-hint {
+  font-size: 10px;
+  color: var(--text3);
+  margin-left: auto;
+}
+
+/* ─── EXPLAINER SECTION ─── */
+.explainer {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.explainer h2 {
+  font-family: var(--syne);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.explainer p {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.8;
+  margin-bottom: 14px;
+  max-width: 640px;
+}
+
+.explainer h3 {
+  font-family: var(--syne);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 20px 0 6px;
+}
+
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 12px 0 20px;
+}
+
+.format-card {
+  padding: 10px 12px;
+  background: var(--bg3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.format-card-name {
+  font-family: var(--syne);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cyan);
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+
+.format-card-desc {
+  font-size: 10px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  padding: 18px 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  background: var(--bg2);
+}
+
+.footer-left {
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  font-size: 11px;
+  color: var(--text3);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover { color: var(--text2); }
+
+/* ─── API KEY MODAL ─── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--bg2);
+  border: 1px solid var(--line2);
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 440px;
+  width: 100%;
+}
+
+.modal-title {
+  font-family: var(--syne);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.modal-sub {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.modal-input {
+  width: 100%;
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.modal-input:focus { border-color: var(--cyan); }
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.modal-cancel {
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid var(--line2);
+  border-radius: 6px;
+  color: var(--text2);
+  font-family: var(--mono);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.modal-save {
+  padding: 8px 16px;
+  background: var(--cyan);
+  border: none;
+  border-radius: 6px;
+  color: var(--bg);
+  font-family: var(--syne);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar-wrap {
+  height: 2px;
+  background: var(--line);
+  border-radius: 1px;
+  margin-top: 4px;
+  overflow: hidden;
+  display: none;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--cyan);
+  border-radius: 1px;
+  transition: width 0.3s;
+  width: 0%;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 640px) {
+  .shell { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .main { padding: 16px; }
+  .topbar { padding: 12px 16px; }
+  .footer { padding: 14px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="none"/>
+            <rect x="9" y="6" width="9" height="12" rx="2" stroke="#3ecfcf" stroke-width="1.5" fill="#0d0e0f"/>
+            <path d="M13 9l2.5 2.5L13 14" stroke="#3ecfcf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-name">FreeFileConverter</span>
+      </div>
+      <div class="logo-tag">FREE · UNLIMITED · PRIVATE</div>
+    </div>
+
+    <div class="sidebar-section">Convert</div>
+    <div class="sidebar-item active" data-panel="images" onclick="switchPanel('images', this)">
+      <span class="sidebar-item-icon">🖼</span> Images
+    </div>
+    <div class="sidebar-item" data-panel="data" onclick="switchPanel('data', this)">
+      <span class="sidebar-item-icon">📊</span> Data Files
+    </div>
+    <div class="sidebar-item" data-panel="documents" onclick="switchPanel('documents', this)">
+      <span class="sidebar-item-icon">📄</span> Documents
+    </div>
+    <div class="sidebar-item" data-panel="cad" onclick="switchPanel('cad', this)">
+      <span class="sidebar-item-icon">📐</span> CAD / Vector
+      <span class="sidebar-item-badge">DXF→SVG</span>
+    </div>
+
+    <div class="sidebar-section" style="margin-top: 8px">Site</div>
+    <a class="sidebar-item" href="blog.html">
+      <span class="sidebar-item-icon">✏️</span> Blog
+    </a>
+    <a class="sidebar-item" href="about.html">
+      <span class="sidebar-item-icon">ℹ️</span> About
+    </a>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="api-promo">
+      <div class="api-promo-title">Unlock more formats</div>
+      <div class="api-promo-body">Add your own API key to enable PDF, Office, audio, and video conversion with no limits.</div>
+      <button class="api-promo-btn" onclick="openApiModal()">Add API key →</button>
+    </div>
+  </aside>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-title">Free File Converter</div>
+    <nav class="topbar-nav">
+      <a class="topbar-link" href="blog.html">Blog</a>
+      <a class="topbar-link" href="about.html">About</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- Ad Slot Top -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7814690967688754"
+           data-ad-slot="auto"
+           data-ad-format="horizontal"
+           data-full-width-responsive="true"></ins>
+    </div>
+
+    <!-- Category tabs (mobile) -->
+    <div class="cat-tabs">
+      <div class="cat-tab active" onclick="switchPanel('images', null, this)">🖼 Images</div>
+      <div class="cat-tab" onclick="switchPanel('data', null, this)">📊 Data</div>
+      <div class="cat-tab" onclick="switchPanel('documents', null, this)">📄 Documents</div>
+      <div class="cat-tab" onclick="switchPanel('cad', null, this)">📐 CAD / Vector</div>
+    </div>
+
+    <!-- ─── IMAGES PANEL ─── -->
+    <div class="converter-panel active" id="panel-images">
+      <div class="panel-intro">
+        <h1>Image Converter</h1>
+        <p>Convert between PNG, JPG, WebP, BMP, GIF, and ICO. All processing happens locally in your browser.</p>
+      </div>
+
+      <div class="drop-zone" id="drop-images" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'images')">
+        <input type="file" multiple accept="image/*" onchange="handleFileInput(event, 'images')">
+        <div class="drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <div class="drop-title">Drop image files here</div>
+        <div class="drop-sub">PNG, JPG, WebP, BMP, GIF, ICO supported<br>or click to browse files</div>
+        <div class="drop-privacy">🔒 Processed locally — never uploaded</div>
+      </div>
+
+      <div class="format-bar">
+        <span class="format-bar-label">Convert to:</span>
+        <div class="format-chips" id="chips-images">
+          <span class="fmt-chip" onclick="selectChip(this, 'images')">PNG</span>
+          <span class="fmt-chip sel" onclick="selectChip(this, 'images')">JPG</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'images')">WEBP</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'images')">BMP</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'images')">ICO</span>
+        </div>
+        <span class="format-arrow">→</span>
+        <select id="quality-images">
+          <option value="0.95">Quality: High</option>
+          <option value="0.75">Quality: Medium</option>
+          <option value="0.5">Quality: Low</option>
+        </select>
+      </div>
+
+      <div class="file-queue" id="queue-images">
+        <div class="file-queue-empty">No files added yet. Drop some above.</div>
+      </div>
+      <div class="progress-bar-wrap" id="prog-images"><div class="progress-bar-fill" id="progfill-images"></div></div>
+
+      <div class="action-row">
+        <button class="convert-btn" onclick="convertFiles('images')">Convert files</button>
+        <button class="dl-all-btn" onclick="downloadAll('images')">Download all</button>
+        <span class="action-hint" id="hint-images"></span>
+      </div>
+
+      <div class="explainer">
+        <h2>About image conversion</h2>
+        <p>This tool converts your images entirely within your browser using the HTML5 Canvas API. No files leave your device at any point — what you see is what gets processed on your own machine.</p>
+
+        <h3>Supported formats</h3>
+        <div class="format-grid">
+          <div class="format-card"><div class="format-card-name">PNG</div><div class="format-card-desc">Lossless. Best for screenshots, logos, transparent images.</div></div>
+          <div class="format-card"><div class="format-card-name">JPG</div><div class="format-card-desc">Lossy compression. Best for photos. Smaller file sizes.</div></div>
+          <div class="format-card"><div class="format-card-name">WebP</div><div class="format-card-desc">Modern format. Smaller than JPG at same quality. Ideal for web.</div></div>
+          <div class="format-card"><div class="format-card-name">BMP</div><div class="format-card-desc">Uncompressed bitmap. Large files, maximum compatibility.</div></div>
+          <div class="format-card"><div class="format-card-name">ICO</div><div class="format-card-desc">Windows icon format. Used for favicons and app icons.</div></div>
+        </div>
+
+        <p>When converting from a format with transparency (PNG, WebP) to one without (JPG, BMP), transparent areas are filled with white automatically.</p>
+      </div>
+    </div>
+
+    <!-- ─── DATA PANEL ─── -->
+    <div class="converter-panel" id="panel-data">
+      <div class="panel-intro">
+        <h1>Data File Converter</h1>
+        <p>Convert between CSV, JSON, TSV, and XML. Structure is preserved automatically where possible.</p>
+      </div>
+
+      <div class="drop-zone" id="drop-data" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'data')">
+        <input type="file" multiple accept=".csv,.json,.tsv,.xml,.txt" onchange="handleFileInput(event, 'data')">
+        <div class="drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <div class="drop-title">Drop data files here</div>
+        <div class="drop-sub">CSV, JSON, TSV, XML supported<br>or click to browse files</div>
+        <div class="drop-privacy">🔒 Processed locally — never uploaded</div>
+      </div>
+
+      <div class="format-bar">
+        <span class="format-bar-label">Convert to:</span>
+        <div class="format-chips" id="chips-data">
+          <span class="fmt-chip sel" onclick="selectChip(this, 'data')">JSON</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'data')">CSV</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'data')">TSV</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'data')">XML</span>
+        </div>
+      </div>
+
+      <div class="file-queue" id="queue-data">
+        <div class="file-queue-empty">No files added yet. Drop some above.</div>
+      </div>
+      <div class="progress-bar-wrap" id="prog-data"><div class="progress-bar-fill" id="progfill-data"></div></div>
+
+      <div class="action-row">
+        <button class="convert-btn" onclick="convertFiles('data')">Convert files</button>
+        <button class="dl-all-btn" onclick="downloadAll('data')">Download all</button>
+        <span class="action-hint" id="hint-data"></span>
+      </div>
+
+      <div class="explainer">
+        <h2>About data file conversion</h2>
+        <p>Tabular data (CSV, TSV) converts cleanly to JSON arrays of objects, and vice versa. The first row of CSV/TSV files is treated as the header row and becomes the object keys in JSON output.</p>
+        <p>XML conversion produces a structured JSON representation of the document tree. Deeply nested XML may require manual cleanup depending on your use case.</p>
+
+        <h3>Format quick reference</h3>
+        <div class="format-grid">
+          <div class="format-card"><div class="format-card-name">CSV</div><div class="format-card-desc">Comma-separated values. Universal spreadsheet and database import format.</div></div>
+          <div class="format-card"><div class="format-card-name">JSON</div><div class="format-card-desc">JavaScript Object Notation. Standard for APIs and config files.</div></div>
+          <div class="format-card"><div class="format-card-name">TSV</div><div class="format-card-desc">Tab-separated values. Like CSV but uses tabs. Common in bioinformatics.</div></div>
+          <div class="format-card"><div class="format-card-name">XML</div><div class="format-card-desc">Extensible Markup Language. Used in configs, feeds, and legacy APIs.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── DOCUMENTS PANEL ─── -->
+    <div class="converter-panel" id="panel-documents">
+      <div class="panel-intro">
+        <h1>Document Converter</h1>
+        <p>Convert between plain text, Markdown, and HTML. Formatting is preserved during conversion.</p>
+      </div>
+
+      <div class="drop-zone" id="drop-documents" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'documents')">
+        <input type="file" multiple accept=".txt,.md,.markdown,.html,.htm" onchange="handleFileInput(event, 'documents')">
+        <div class="drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <div class="drop-title">Drop document files here</div>
+        <div class="drop-sub">TXT, Markdown (.md), HTML supported<br>or click to browse files</div>
+        <div class="drop-privacy">🔒 Processed locally — never uploaded</div>
+      </div>
+
+      <div class="format-bar">
+        <span class="format-bar-label">Convert to:</span>
+        <div class="format-chips" id="chips-documents">
+          <span class="fmt-chip sel" onclick="selectChip(this, 'documents')">HTML</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'documents')">MD</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'documents')">TXT</span>
+        </div>
+      </div>
+
+      <div class="file-queue" id="queue-documents">
+        <div class="file-queue-empty">No files added yet. Drop some above.</div>
+      </div>
+      <div class="progress-bar-wrap" id="prog-documents"><div class="progress-bar-fill" id="progfill-documents"></div></div>
+
+      <div class="action-row">
+        <button class="convert-btn" onclick="convertFiles('documents')">Convert files</button>
+        <button class="dl-all-btn" onclick="downloadAll('documents')">Download all</button>
+        <span class="action-hint" id="hint-documents"></span>
+      </div>
+
+      <div class="explainer">
+        <h2>About document conversion</h2>
+        <p>Document conversion handles plain text, Markdown, and HTML formats. Markdown to HTML conversion supports all standard CommonMark syntax including headings, bold, italic, lists, code blocks, links, and images.</p>
+        <p>Converting HTML or Markdown to plain text strips all formatting and tags, leaving only the readable content — useful for creating clean text copies of web pages or formatted documents.</p>
+      </div>
+    </div>
+
+    <!-- ─── CAD PANEL ─── -->
+    <div class="converter-panel" id="panel-cad">
+      <div class="panel-intro">
+        <h1>CAD & Vector Converter</h1>
+        <p>Convert DXF files to SVG for use in design tools, laser cutters, and web projects. Geometry is preserved at full precision.</p>
+      </div>
+
+      <div class="drop-zone" id="drop-cad" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 'cad')">
+        <input type="file" multiple accept=".dxf,.svg" onchange="handleFileInput(event, 'cad')">
+        <div class="drop-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        </div>
+        <div class="drop-title">Drop DXF or SVG files here</div>
+        <div class="drop-sub">DXF → SVG and SVG → DXF supported<br>or click to browse files</div>
+        <div class="drop-privacy">🔒 Processed locally — never uploaded</div>
+      </div>
+
+      <div class="format-bar">
+        <span class="format-bar-label">Convert to:</span>
+        <div class="format-chips" id="chips-cad">
+          <span class="fmt-chip sel" onclick="selectChip(this, 'cad')">SVG</span>
+          <span class="fmt-chip" onclick="selectChip(this, 'cad')">PNG</span>
+        </div>
+      </div>
+
+      <div class="file-queue" id="queue-cad">
+        <div class="file-queue-empty">No files added yet. Drop some above.</div>
+      </div>
+      <div class="progress-bar-wrap" id="prog-cad"><div class="progress-bar-fill" id="progfill-cad"></div></div>
+
+      <div class="action-row">
+        <button class="convert-btn" onclick="convertFiles('cad')">Convert files</button>
+        <button class="dl-all-btn" onclick="downloadAll('cad')">Download all</button>
+        <span class="action-hint" id="hint-cad"></span>
+      </div>
+
+      <div class="explainer">
+        <h2>About DXF to SVG conversion</h2>
+        <p>DXF (Drawing Exchange Format) is AutoCAD's standard interchange format, used widely in CAD, CNC, and laser cutting workflows. SVG (Scalable Vector Graphics) is the universal vector format for the web and most modern design tools.</p>
+        <p>This converter handles lines, arcs, circles, polylines, and splines. Complex 3D DXF entities are projected to 2D. For best results, use 2D DXF files exported from your CAD software.</p>
+
+        <h3>Common use cases</h3>
+        <div class="format-grid">
+          <div class="format-card"><div class="format-card-name">Laser cutting</div><div class="format-card-desc">Convert DXF cut paths to SVG for LightBurn, xTool Creative Space, or Inkscape.</div></div>
+          <div class="format-card"><div class="format-card-name">Web display</div><div class="format-card-desc">Embed CAD drawings directly in web pages as scalable SVG.</div></div>
+          <div class="format-card"><div class="format-card-name">Design tools</div><div class="format-card-desc">Import technical drawings into Figma, Illustrator, or Affinity.</div></div>
+          <div class="format-card"><div class="format-card-name">CNC / routing</div><div class="format-card-desc">Convert between formats for different CNC software packages.</div></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">© 2026 FreeFileConverter.org — All conversions happen in your browser. No files are uploaded.</div>
+    <div class="footer-links">
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback / Issues</a>
+    </div>
+  </footer>
+
+</div>
+
+<!-- API KEY MODAL -->
+<div class="modal-overlay" id="api-modal" onclick="closeApiModal(event)">
+  <div class="modal">
+    <div class="modal-title">Add API Key</div>
+    <div class="modal-sub">Add a Cloudinary API key to unlock PDF, Office document, audio, and video conversion. Your key is stored only in your browser's local storage and is never sent to our servers.</div>
+    <input type="password" class="modal-input" id="api-key-input" placeholder="Cloudinary API key..." autocomplete="off">
+    <div class="modal-actions">
+      <button class="modal-cancel" onclick="closeApiModal()">Cancel</button>
+      <button class="modal-save" onclick="saveApiKey()">Save key</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── STATE ───
+const state = {
+  images:    { files: [], converted: [] },
+  data:      { files: [], converted: [] },
+  documents: { files: [], converted: [] },
+  cad:       { files: [], converted: [] },
+};
+
+// ─── PANEL SWITCHING ───
+function switchPanel(id, sidebarEl, tabEl) {
+  document.querySelectorAll('.converter-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  if (sidebarEl) sidebarEl.classList.add('active');
+  if (tabEl) tabEl.classList.add('active');
+}
+
+// ─── DRAG & DROP ───
+function handleDragOver(e) {
+  e.preventDefault();
+  e.currentTarget.classList.add('drag-over');
+}
+function handleDragLeave(e) {
+  e.currentTarget.classList.remove('drag-over');
+}
+function handleDrop(e, panel) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  addFiles([...e.dataTransfer.files], panel);
+}
+function handleFileInput(e, panel) {
+  addFiles([...e.target.files], panel);
+  e.target.value = '';
+}
+
+// ─── FILE MANAGEMENT ───
+function addFiles(files, panel) {
+  files.forEach(f => {
+    state[panel].files.push({ file: f, status: 'ready', blob: null, outName: null });
+  });
+  renderQueue(panel);
+}
+
+function removeFile(panel, idx) {
+  state[panel].files.splice(idx, 1);
+  renderQueue(panel);
+}
+
+function renderQueue(panel) {
+  const q = document.getElementById('queue-' + panel);
+  const files = state[panel].files;
+  if (!files.length) {
+    q.innerHTML = '<div class="file-queue-empty">No files added yet. Drop some above.</div>';
+    updateHint(panel);
+    return;
+  }
+  q.innerHTML = files.map((f, i) => {
+    const ext = f.file.name.split('.').pop().toUpperCase();
+    const size = formatBytes(f.file.size);
+    const statusClass = f.status === 'done' ? 'status-done' : f.status === 'error' ? 'status-error' : f.status === 'converting' ? 'status-converting' : 'status-ready';
+    const statusLabel = f.status === 'done' ? '✓ Done' : f.status === 'error' ? '✗ Error' : f.status === 'converting' ? '⟳ Converting' : 'Ready';
+    const dlDisabled = f.status !== 'done' ? 'disabled' : '';
+    return `<div class="file-row">
+      <div class="file-type-badge">${ext}</div>
+      <div class="file-info">
+        <div class="file-name">${escHtml(f.file.name)}</div>
+        <div class="file-meta">${size}</div>
+      </div>
+      <span class="file-status-badge ${statusClass}">${statusLabel}</span>
+      <button class="file-dl-btn" ${dlDisabled} onclick="downloadOne('${panel}', ${i})">Download</button>
+      <button class="file-remove-btn" onclick="removeFile('${panel}', ${i})">✕</button>
+    </div>`;
+  }).join('');
+  updateHint(panel);
+}
+
+function updateHint(panel) {
+  const el = document.getElementById('hint-' + panel);
+  const n = state[panel].files.length;
+  el.textContent = n ? `${n} file${n > 1 ? 's' : ''} queued` : '';
+}
+
+// ─── CHIP SELECTION ───
+function selectChip(el, panel) {
+  document.querySelectorAll(`#chips-${panel} .fmt-chip`).forEach(c => c.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+function getSelectedFormat(panel) {
+  const sel = document.querySelector(`#chips-${panel} .fmt-chip.sel`);
+  return sel ? sel.textContent.trim().toLowerCase() : null;
+}
+
+// ─── CONVERSION ───
+async function convertFiles(panel) {
+  const files = state[panel].files;
+  if (!files.length) return;
+  const fmt = getSelectedFormat(panel);
+  const progWrap = document.getElementById('prog-' + panel);
+  const progFill = document.getElementById('progfill-' + panel);
+  progWrap.style.display = 'block';
+
+  for (let i = 0; i < files.length; i++) {
+    files[i].status = 'converting';
+    renderQueue(panel);
+    progFill.style.width = ((i / files.length) * 100) + '%';
+    try {
+      const blob = await convertFile(files[i].file, fmt, panel);
+      files[i].status = 'done';
+      files[i].blob = blob;
+      const baseName = files[i].file.name.replace(/\.[^.]+$/, '');
+      files[i].outName = baseName + '.' + fmt;
+    } catch(err) {
+      files[i].status = 'error';
+      console.error(err);
+    }
+    renderQueue(panel);
+  }
+  progFill.style.width = '100%';
+  setTimeout(() => { progWrap.style.display = 'none'; progFill.style.width = '0%'; }, 800);
+}
+
+async function convertFile(file, fmt, panel) {
+  if (panel === 'images') return convertImage(file, fmt);
+  if (panel === 'data')   return convertData(file, fmt);
+  if (panel === 'documents') return convertDoc(file, fmt);
+  if (panel === 'cad')    return convertCad(file, fmt);
+}
+
+// ─── IMAGE CONVERSION ───
+async function convertImage(file, fmt) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width;
+      canvas.height = img.height;
+      const ctx = canvas.getContext('2d');
+      if (fmt === 'jpg' || fmt === 'bmp') {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+
+      if (fmt === 'ico') {
+        // Simple ICO: resize to 32x32, use PNG inside
+        const ico = document.createElement('canvas');
+        ico.width = 32; ico.height = 32;
+        ico.getContext('2d').drawImage(canvas, 0, 0, 32, 32);
+        ico.toBlob(b => resolve(b), 'image/png');
+        return;
+      }
+      const mimeMap = { png: 'image/png', jpg: 'image/jpeg', webp: 'image/webp', bmp: 'image/bmp', gif: 'image/gif' };
+      const quality = parseFloat(document.getElementById('quality-images')?.value || '0.95');
+      canvas.toBlob(b => b ? resolve(b) : reject('Canvas toBlob failed'), mimeMap[fmt] || 'image/png', quality);
+    };
+    img.onerror = () => reject('Image load error');
+    img.src = url;
+  });
+}
+
+// ─── DATA CONVERSION ───
+async function convertData(file, fmt) {
+  const text = await file.text();
+  const srcExt = file.name.split('.').pop().toLowerCase();
+  let data;
+
+  // Parse source
+  if (srcExt === 'json') {
+    data = JSON.parse(text);
+  } else if (srcExt === 'csv' || srcExt === 'tsv') {
+    const sep = srcExt === 'tsv' ? '\t' : ',';
+    const lines = text.trim().split('\n');
+    const headers = parseCsvLine(lines[0], sep);
+    data = lines.slice(1).map(line => {
+      const vals = parseCsvLine(line, sep);
+      const obj = {};
+      headers.forEach((h, i) => obj[h.trim()] = (vals[i] || '').trim());
+      return obj;
+    });
+  } else if (srcExt === 'xml') {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'application/xml');
+    data = xmlToJson(doc.documentElement);
+  } else {
+    data = text;
+  }
+
+  // Output format
+  if (fmt === 'json') {
+    return new Blob([JSON.stringify(Array.isArray(data) ? data : data, null, 2)], { type: 'application/json' });
+  } else if (fmt === 'csv' || fmt === 'tsv') {
+    const sep = fmt === 'tsv' ? '\t' : ',';
+    const arr = Array.isArray(data) ? data : [data];
+    const headers = arr.length ? Object.keys(arr[0]) : [];
+    const rows = [headers.join(sep), ...arr.map(r => headers.map(h => csvEscape(String(r[h] ?? ''), sep)).join(sep))];
+    return new Blob([rows.join('\n')], { type: 'text/plain' });
+  } else if (fmt === 'xml') {
+    const arr = Array.isArray(data) ? data : [data];
+    const xmlStr = '<?xml version="1.0" encoding="UTF-8"?>\n<root>\n' +
+      arr.map(obj => '  <item>\n' + Object.entries(obj).map(([k,v]) => `    <${k}>${escHtml(String(v))}</${k}>`).join('\n') + '\n  </item>').join('\n') +
+      '\n</root>';
+    return new Blob([xmlStr], { type: 'application/xml' });
+  }
+}
+
+function parseCsvLine(line, sep) {
+  const res = []; let cur = ''; let inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') { inQ = !inQ; }
+    else if (c === sep && !inQ) { res.push(cur); cur = ''; }
+    else cur += c;
+  }
+  res.push(cur);
+  return res;
+}
+
+function csvEscape(val, sep) {
+  if (val.includes(sep) || val.includes('"') || val.includes('\n')) return '"' + val.replace(/"/g, '""') + '"';
+  return val;
+}
+
+function xmlToJson(node) {
+  if (node.nodeType === 3) return node.textContent.trim();
+  const obj = {};
+  for (const child of node.childNodes) {
+    if (child.nodeType !== 1) continue;
+    const key = child.tagName;
+    const val = xmlToJson(child);
+    obj[key] = obj[key] ? [].concat(obj[key], val) : val;
+  }
+  return obj;
+}
+
+// ─── DOCUMENT CONVERSION ───
+async function convertDoc(file, fmt) {
+  const text = await file.text();
+  const srcExt = file.name.split('.').pop().toLowerCase();
+  let output = '';
+
+  if (fmt === 'html') {
+    if (srcExt === 'md' || srcExt === 'markdown') output = mdToHtml(text);
+    else if (srcExt === 'txt') output = `<pre>${escHtml(text)}</pre>`;
+    else output = text;
+  } else if (fmt === 'txt') {
+    if (srcExt === 'html' || srcExt === 'htm') {
+      const d = new DOMParser().parseFromString(text, 'text/html');
+      output = d.body.innerText || d.body.textContent;
+    } else if (srcExt === 'md' || srcExt === 'markdown') {
+      output = text.replace(/#{1,6}\s/g, '').replace(/[*_`~]/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
+    } else output = text;
+  } else if (fmt === 'md') {
+    if (srcExt === 'html' || srcExt === 'htm') {
+      output = htmlToMd(text);
+    } else output = text;
+  }
+  return new Blob([output], { type: 'text/plain' });
+}
+
+function mdToHtml(md) {
+  return md
+    .replace(/^### (.+)$/gm, '<h3>$1</h3>')
+    .replace(/^## (.+)$/gm, '<h2>$1</h2>')
+    .replace(/^# (.+)$/gm, '<h1>$1</h1>')
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    .replace(/`(.+?)`/g, '<code>$1</code>')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+    .replace(/\n\n/g, '</p><p>')
+    .replace(/^(?!<[a-z])/gm, '<p>$&</p>');
+}
+
+function htmlToMd(html) {
+  return html
+    .replace(/<h1[^>]*>(.*?)<\/h1>/gi, '# $1\n')
+    .replace(/<h2[^>]*>(.*?)<\/h2>/gi, '## $1\n')
+    .replace(/<h3[^>]*>(.*?)<\/h3>/gi, '### $1\n')
+    .replace(/<strong[^>]*>(.*?)<\/strong>/gi, '**$1**')
+    .replace(/<em[^>]*>(.*?)<\/em>/gi, '*$1*')
+    .replace(/<a[^>]+href="([^"]+)"[^>]*>(.*?)<\/a>/gi, '[$2]($1)')
+    .replace(/<li[^>]*>(.*?)<\/li>/gi, '- $1\n')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<p[^>]*>(.*?)<\/p>/gi, '$1\n\n')
+    .replace(/<[^>]+>/g, '')
+    .trim();
+}
+
+// ─── CAD CONVERSION ───
+async function convertCad(file, fmt) {
+  const text = await file.text();
+  const srcExt = file.name.split('.').pop().toLowerCase();
+
+  if (srcExt === 'dxf') {
+    const svg = dxfToSvg(text);
+    if (fmt === 'svg') return new Blob([svg], { type: 'image/svg+xml' });
+    if (fmt === 'png') return svgToPng(svg);
+  } else if (srcExt === 'svg') {
+    if (fmt === 'png') return svgToPng(text);
+  }
+  return new Blob([text], { type: 'text/plain' });
+}
+
+function dxfToSvg(dxf) {
+  const lines = dxf.split('\n').map(l => l.trim());
+  const entities = [];
+  let i = 0;
+  let inEntities = false;
+
+  while (i < lines.length) {
+    if (lines[i] === '0' && lines[i+1] === 'SECTION' && lines[i+2] === '2' && lines[i+3] === 'ENTITIES') {
+      inEntities = true; i += 4; continue;
+    }
+    if (inEntities && lines[i] === '0' && lines[i+1] === 'ENDSEC') break;
+
+    if (inEntities && lines[i] === '0') {
+      const type = lines[i+1];
+      if (['LINE','CIRCLE','ARC','LWPOLYLINE'].includes(type)) {
+        const ent = { type, data: {} };
+        i += 2;
+        while (i < lines.length && lines[i] !== '0') {
+          const code = parseInt(lines[i]);
+          const val = lines[i+1];
+          if (!isNaN(code)) ent.data[code] = isNaN(parseFloat(val)) ? val : parseFloat(val);
+          i += 2;
+        }
+        entities.push(ent);
+        continue;
+      }
+    }
+    i++;
+  }
+
+  // Bounds
+  let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+  entities.forEach(e => {
+    const d = e.data;
+    const xs = [d[10],d[11]].filter(v=>v!==undefined);
+    const ys = [d[20],d[21]].filter(v=>v!==undefined);
+    if(e.type==='CIRCLE'||e.type==='ARC'){const r=d[40]||0;xs.push((d[10]||0)+r);xs.push((d[10]||0)-r);ys.push((d[20]||0)+r);ys.push((d[20]||0)-r);}
+    xs.forEach(x=>{if(x<minX)minX=x;if(x>maxX)maxX=x;});
+    ys.forEach(y=>{if(y<minY)minY=y;if(y>maxY)maxY=y;});
+  });
+  if(!isFinite(minX)){minX=0;minY=0;maxX=100;maxY=100;}
+  const W=Math.max(maxX-minX,1), H=Math.max(maxY-minY,1);
+  const pad=Math.max(W,H)*0.05;
+
+  const svgPaths = entities.map(e => {
+    const d = e.data;
+    const tx = x => (x - minX + pad).toFixed(3);
+    const ty = y => (maxY - y + pad).toFixed(3);
+
+    if (e.type === 'LINE') {
+      return `<line x1="${tx(d[10])}" y1="${ty(d[20])}" x2="${tx(d[11])}" y2="${ty(d[21])}" stroke="#3ecfcf" stroke-width="0.5" fill="none"/>`;
+    }
+    if (e.type === 'CIRCLE') {
+      return `<circle cx="${tx(d[10])}" cy="${ty(d[20])}" r="${(d[40]||1).toFixed(3)}" stroke="#3ecfcf" stroke-width="0.5" fill="none"/>`;
+    }
+    if (e.type === 'ARC') {
+      const cx=d[10]||0, cy=d[20]||0, r=d[40]||1;
+      const sa=(d[50]||0)*Math.PI/180, ea=(d[51]||360)*Math.PI/180;
+      const x1=cx+r*Math.cos(sa), y1=cy+r*Math.sin(sa);
+      const x2=cx+r*Math.cos(ea), y2=cy+r*Math.sin(ea);
+      const large=((d[51]||360)-(d[50]||0)+360)%360>180?1:0;
+      return `<path d="M ${tx(x1)} ${ty(y1)} A ${r.toFixed(3)} ${r.toFixed(3)} 0 ${large} 0 ${tx(x2)} ${ty(y2)}" stroke="#3ecfcf" stroke-width="0.5" fill="none"/>`;
+    }
+    return '';
+  }).join('\n  ');
+
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${(W+pad*2).toFixed(3)} ${(H+pad*2).toFixed(3)}" style="background:#0d0e0f">\n  ${svgPaths}\n</svg>`;
+}
+
+function svgToPng(svgText) {
+  return new Promise((resolve, reject) => {
+    const blob = new Blob([svgText], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width || 800;
+      canvas.height = img.height || 600;
+      canvas.getContext('2d').drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      canvas.toBlob(b => resolve(b), 'image/png');
+    };
+    img.onerror = () => reject('SVG render error');
+    img.src = url;
+  });
+}
+
+// ─── DOWNLOAD ───
+function downloadOne(panel, idx) {
+  const f = state[panel].files[idx];
+  if (!f || !f.blob) return;
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(f.blob);
+  a.download = f.outName || 'converted';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function downloadAll(panel) {
+  state[panel].files.forEach((f, i) => {
+    if (f.status === 'done') setTimeout(() => downloadOne(panel, i), i * 200);
+  });
+}
+
+// ─── API MODAL ───
+function openApiModal() { document.getElementById('api-modal').classList.add('open'); }
+function closeApiModal(e) {
+  if (!e || e.target === document.getElementById('api-modal')) document.getElementById('api-modal').classList.remove('open');
+}
+function saveApiKey() {
+  const key = document.getElementById('api-key-input').value.trim();
+  if (key) localStorage.setItem('fc_api_key', key);
+  document.getElementById('api-modal').classList.remove('open');
+}
+
+// ─── UTILS ───
+function formatBytes(bytes) {
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1024*1024) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/(1024*1024)).toFixed(1) + ' MB';
+}
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// Init AdSense
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!-- Feedback -->
+<script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+</body>
+</html>
