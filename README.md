@@ -28,7 +28,7 @@ Pure static HTML/CSS/JS. No build step, no dependencies, no server-side processi
 
 - **Hosting**: Cloudflare Pages
 - **Fonts**: Google Fonts (Syne, IBM Plex Mono, Instrument Serif)
-- **Monetization**: Google AdSense (pub-7814690967688754)
+- **Monetization**: Infolinks + clean display banner placements
 - **Analytics**: Cloudflare Web Analytics
 
 ## File structure

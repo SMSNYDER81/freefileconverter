@@ -6,7 +6,9 @@
 <title>How to Convert DXF Files to SVG Without Losing Precision — FreeFileConverter</title>
 <meta name="description" content="DXF to SVG conversion is trickier than it looks. Coordinate systems, line weights, and arc precision all matter. This guide walks through every gotcha.">
 <link rel="canonical" href="https://freefileconverter.org/dxf-to-svg.html">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iIzBkMGUwZiIvPgogIDxyZWN0IHg9IjciIHk9IjYiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U4ZTRkYyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cmVjdCB4PSIxNCIgeT0iMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIxNCIgcng9IjIiIGZpbGw9IiMwZDBlMGYiIHN0cm9rZT0iIzNlY2ZjZiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8cGF0aCBkPSJNMjAgOWwzIDMtMyAzIiBzdHJva2U9IiMzZWNmY2YiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGZpbGw9Im5vbmUiLz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/favicon.svg">
 <meta property="og:title" content="How to Convert DXF Files to SVG Without Losing Precision">
 <meta property="og:description" content="Coordinate systems, line weights, and arc precision all matter. This guide walks through every gotcha.">
 <meta property="og:type" content="article">
@@ -14,7 +16,6 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Convert DXF Files to SVG Without Losing Precision","description":"DXF to SVG conversion guide covering coordinate systems, line weights, and arc precision.","author":{"@type":"Organization","name":"FreeFileConverter"},"publisher":{"@type":"Organization","name":"FreeFileConverter","url":"https://freefileconverter.org"},"datePublished":"2026-05-01"}</script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7814690967688754" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -62,6 +63,10 @@ li{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:4px}
 .footer-links{display:flex;gap:16px}
 .footer-links a{font-size:11px;color:var(--text3);text-decoration:none}
 .footer-links a:hover{color:var(--text2)}
+
+.ad-label{display:block;font-family:var(--syne);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:8px}
+.ad-desktop{display:block}.ad-mobile{display:none}
+@media(max-width:760px){.ad-desktop{display:none}.ad-mobile{display:block}}
 </style>
 </head>
 <body>
@@ -85,7 +90,19 @@ li{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:4px}
 
   <p>DXF and SVG are both vector formats, but they come from completely different worlds. DXF is an AutoCAD interchange format built for engineering precision — millimeters, tolerances, layer stacks. SVG is a web format built for display — pixels, viewBoxes, browser rendering. Converting between them cleanly requires understanding where those worlds collide.</p>
 
-  <div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7814690967688754" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+  <div class="ad-slot" aria-label="Advertisement">
+  <span class="ad-label">Advertisement</span>
+  <script>
+    atOptions = {
+      'key' : '74bc67269fc3238073a66bcebb939a57',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+  </script>
+  <script src="https://www.highperformanceformat.com/74bc67269fc3238073a66bcebb939a57/invoke.js"></script>
+</div>
 
   <h2>Why DXF to SVG is trickier than it looks</h2>
   <p>Both formats store vector geometry — lines, curves, shapes — so you'd think conversion would be straightforward. The complications come from several fundamental differences:</p>
@@ -149,7 +166,14 @@ li{font-size:13px;color:var(--text2);line-height:1.9;margin-bottom:4px}
     <a href="https://github.com/SMSNYDER81/freefileconverter/issues" target="_blank" rel="noopener">Feedback</a>
   </div>
 </footer>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({})</script>
 <script src="feedback.js" data-repo="https://github.com/SMSNYDER81/freefileconverter/issues"></script>
+
+<!-- Infolinks Ads -->
+<script type="text/javascript">
+var infolinks_pid = 3445329;
+var infolinks_wsid = 0;
+</script>
+<script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
+
 </body>
 </html>
